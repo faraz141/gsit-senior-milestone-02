@@ -1,12 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.wave {
+  display: inline-block;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-
+.hover:hover {
+  background-color: #f3f311;
+  color: black;
+  border-radius: 8px;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
