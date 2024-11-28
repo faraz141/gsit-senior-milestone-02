@@ -8,7 +8,7 @@ const skills = [
   { name: 'JavaScript', level: 75, icon: <FaJs className="text-[#EFD81D]" /> },
   { name: 'React.js', level: 80, icon: <FaReact className="text-[#12CEF2]" /> },
   {
-    name: 'Node.js',
+    name: 'Next.js',
     level: 70,
     icon: <RiNextjsFill />,
   },
@@ -18,9 +18,9 @@ const SkillsSection = () => {
   return (
     <div className="p-8 text-center bg-gray-950 text-white">
       <h2 className="text-3xl font-bold mb-4">My Skills</h2>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-col md:flex-row md:flex-wrap items-center justify-start">
         {skills.map((skill, index) => (
-          <div className="w-full max-w-md mb-4 " key={index}>
+          <div className="w-full max-w-[250px] mb-4 " key={index}>
             <motion.div
               className=" bg-[#111827] rounded-lg m-2 p-4"
               key={index}
