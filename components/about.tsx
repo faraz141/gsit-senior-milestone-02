@@ -1,32 +1,102 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// 14.2.16
-
-// components/AboutUs.tsx
 const AboutUs = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      offset: 200,
+      once: true, // Trigger animations only once
+      mirror: true, // Mirror animation when scrolling back up
+    });
+
+    // Reinitialize AOS if dynamic content changes
+    AOS.refresh();
+  }, []);
+
   return (
-    <section className="about flex flex-col items-center justify-center bg-gray-900 text-center py-10 px-5 ">
-      <h2 className="text-2xl font-bold text-white text-center mb-6 w-[200px] py-2 bg-gray-950 rounded-2xl">
-        About <span className="text-yellow-500">Me</span>
-      </h2>
-      <div className="about-content flex flex-wrap items-center justify-center ml-20">
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7 }}
+    <section className="about flex flex-col items-center justify-center bg-gray-900 text-center py-10 px-5">
+      <div className="mx-auto w-[220px]">
+        <h1
+          className="text-[40px] font-bold text-center my-[20px] leading-[0] font-[custom3] text-[#CC8B00]"
+          data-aos="zoom-in"
+          data-aos-offset="200"
+          data-aos-delay="0"
+          data-aos-duration="1000"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top"
+        >
+          About Me
+        </h1>
+        <div className="flex justify-center items-center w-[220px] mx-auto">
+          <div
+            className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[100px] border-l-[#374151] border-b-[8px] border-b-transparent -mr-[10px]"
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="800"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
+          <div
+            className="w-[20px] h-[20px] rounded-full bg-[#374151]"
+            data-aos="fade-down"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
+          <div
+            className="w-0 h-0 border-t-[8px] border-t-transparent border-r-[100px] border-r-[#374151] border-b-[8px] border-b-transparent -ml-[10px]"
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="800"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
+        </div>
+      </div>
+
+      <div className="about-content flex flex-col md:flex-row items-center justify-center my-6 md:ml-20">
+        <div
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top"
+          className="mx-20 "
         >
           <Image
             src={'/images/faraz-fiverr.png'}
             alt="About Us"
-            width={400}
-            height={300}
-            className="rounded-custom-1 m-5 transition duration-700 hover:scale-90"
+            width={280}
+            height={320}
+            className="rounded-custom-1 transition duration-700 flex  hover:scale-90"
           />
-        </motion.div>
-        <div className="about-text max-w-xl m-5 text-left text-[14px] font-normal  text-white">
+        </div>
+        <div
+          className="about-text max-w-xl m-5 px-9 text-left text-[14px] font-normal text-white"
+          data-aos="fade-up"
+          data-aos-offset="200"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top"
+        >
           <h3 className="font-semibold text-3xl">
             Curious about me? Here You Have it:
           </h3>
@@ -34,38 +104,35 @@ const AboutUs = () => {
             I am a passionate, self-proclaimed web developer who specializes in
             UI / UX Designing and Web Development (React.js & Next.js). I am
             very enthusiastic about bringing the technical and visual aspects of
-            digital products to life. User experience, pixel perfect design, and
-            writing clear, readable, highly performant code matters to me.
+            digital products to life. User experience, pixel-perfect design, and
+            writing clear, readable, highly performant code matter to me.
           </p>
           <p className="m-2">
-            I have started my journey over a year back as a web designer and a
-            web developer in 2023, and since then, I have continued to grow and
-            evolve as a designer and a developer, taking on new challenges and
-            learning the latest technologies along the way.
+            I started my journey as a web designer and developer in 2023. Since
+            then, I have continued to grow and evolve, taking on new challenges
+            and learning the latest technologies along the way.
           </p>
           <p className="m-2">
-            I am trying to learn and evolve everyday by taking up new challenges
-            and learning new things on a day to day basis. I love learning about
-            user psychology and make a valuable user experience for all type of
-            users.
+            I love learning about user psychology and creating valuable user
+            experiences for all types of users.
           </p>
           <p className="m-2">
-            I am very much a progressive thinker and enjoy working on products
-            end to end, from ideation all the way to development.
-          </p>
-          <p className="m-2">
-            Finally some quick bits about me,
-            <ul>
+            Finally, some quick bits about me:
+            <ul className="list-disc ml-5">
               <li>Tech Geek</li>
               <li>Freelancer</li>
-              <li>Ui/Ux Designer</li>
+              <li>UI/UX Designer</li>
             </ul>
           </p>
-          <p className="m-2">
-            One last thing, I am available for freelance work, so feel free to
-            reach out and say hello! I promise I don not bite 😉
-          </p>
-          <button className="bg-yellow-500 hover:bg-yellow-600  mt-6 text-gray-900 font-bold py-2 px-4 rounded transition duration-700 hover:scale-90">
+          <button
+            className="bg-yellow-500 hover:bg-yellow-600 mt-6 text-gray-900 font-bold py-2 px-4 rounded transition duration-700 hover:scale-90"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          >
             <Link href="/contact">Contact Us</Link>
           </button>
         </div>

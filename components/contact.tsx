@@ -58,14 +58,79 @@ const Contact = () => {
   return (
     <section className="bg-gray-900 text-white py-12 px-4" id="contact">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-6">
+        {/* <h2 className="text-4xl font-bold text-center mb-6">
           Contact <span className="text-yellow-500">Me</span>
-        </h2>
-        <p className="text-center text-gray-400 mb-8">
-          Feel free to contact me.{' '}
-        </p>
+        </h2> */}
+        <div className="mx-auto w-[220px]">
+          <h1
+            className="text-4xl font-bold text-center mb-6 leading-[0] font-[custom3] text-[#eee]"
+            data-aos="zoom-in"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="1000"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          >
+            Contact <span className="text-yellow-500">Me</span>
+          </h1>
+          <div className="flex justify-center items-center w-[220px] mx-auto">
+            <div
+              className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[100px] border-l-[#CA8A04] border-b-[8px] border-b-transparent -mr-[10px]"
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="0"
+              data-aos-duration="800"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top"
+            ></div>
+            <div
+              className="w-[20px] h-[20px] rounded-full bg-[#CA8A04]"
+              data-aos="fade-down"
+              data-aos-offset="200"
+              data-aos-delay="0"
+              data-aos-duration="500"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top"
+            ></div>
+            <div
+              className="w-0 h-0 border-t-[8px] border-t-transparent border-r-[100px] border-r-[#CA8A04] border-b-[8px] border-b-transparent -ml-[10px]"
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-delay="0"
+              data-aos-duration="800"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top"
+            ></div>
+          </div>
+        </div>
+
         <div className="flex flex-wrap justify-between gap-8 mb-12">
-          <div className="text-white pt-32">
+          <div
+            className="text-white pt-32"
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="700"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          >
+            <p
+              className=" text-2xl text-gray-400 mb-8"
+              data-aos="zoom-in"
+              data-aos-offset="200"
+              data-aos-delay="0"
+              data-aos-duration="800"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top"
+            >
+              Feel free to Contact me.
+            </p>
             <p className="mb-4">
               <span className="font-bold">Address :</span> Karachi, Pakistan
             </p>
@@ -111,7 +176,14 @@ const Contact = () => {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="bg-gray-950 p-6 rounded-lg w-full max-w-md"
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="1000"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+            className="bg-gray-950 mt-12 p-6 rounded-lg w-full max-w-sm"
           >
             <div className="mb-4">
               <input
