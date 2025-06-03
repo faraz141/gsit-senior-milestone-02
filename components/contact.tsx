@@ -73,7 +73,7 @@ const Contact = () => {
         const errorData = await response.json();
         setStatus(`Error: ${errorData.error || 'Failed to send message.'} ${errorData.details || ''}`);
       }
-    } catch (error) {
+    } catch {
       setStatus('Error: Failed to send message.');
     }
   };

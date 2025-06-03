@@ -35,11 +35,19 @@ export async function POST(req: NextRequest) {
     await sgMail.send(emailContent);
 
     return NextResponse.json({ message: 'Message sent successfully' }, { status: 200 });
-  } catch (error: any) {
-    console.error('Error in /api/contact:', error.response?.body || error.message);
+  } catch (error: unknown) {
+  if (error instanceof Error) {
+    console.error('Error in /api/contact:', error.message);
     return NextResponse.json(
-      { error: 'Failed to send message', details: error.response?.body || error.message },
+      { error: 'Failed to send message', details: error.message },
+      { status: 500 }
+    );
+  } else {
+    console.error('Unknown error in /api/contact:', error);
+    return NextResponse.json(
+      { error: 'Failed to send message', details: 'Unknown error occurred' },
       { status: 500 }
     );
   }
+}
 }
