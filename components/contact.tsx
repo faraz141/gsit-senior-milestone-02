@@ -1,30 +1,35 @@
 'use client';
+
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
   const [errors, setErrors] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
+  const [status, setStatus] = useState<string>('');
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
   };
 
   const validateForm = () => {
     let valid = true;
-    const tempErrors = { name: '', email: '', message: '' };
+    const tempErrors = { name: '', email: '',subject: '', message: '' };
 
     if (!formData.name) {
       tempErrors.name = 'Name is required';
@@ -46,21 +51,36 @@ const Contact = () => {
     return valid;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log('Form Data:', formData);
-      alert('Form submitted successfully');
-      setFormData({ name: '', email: '', message: '' });
+    if (!validateForm()) {
+      return;
+    }
+
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '',subject: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        setStatus(`Error: ${errorData.error || 'Failed to send message.'} ${errorData.details || ''}`);
+      }
+    } catch (error) {
+      setStatus('Error: Failed to send message.');
     }
   };
 
   return (
     <section className="bg-gray-900 text-white py-12 px-4" id="contact">
       <div className="max-w-4xl mx-auto">
-        {/* <h2 className="text-4xl font-bold text-center mb-6">
-          Contact <span className="text-yellow-500">Me</span>
-        </h2> */}
         <div className="mx-auto w-[220px]">
           <h1
             className="text-4xl font-bold text-center mb-6 leading-[0] font-[custom3] text-[#eee]"
@@ -120,7 +140,7 @@ const Contact = () => {
             data-aos-anchor-placement="top"
           >
             <p
-              className=" text-2xl text-gray-400 mb-8"
+              className="text-2xl text-gray-400 mb-8"
               data-aos="zoom-in"
               data-aos-offset="200"
               data-aos-delay="0"
@@ -146,33 +166,30 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125 " />
+                <FaGithub className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/faraz-alam-89a923296/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125 " />
+                <FaLinkedin className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125" />
               </Link>
               <Link
                 href="https://www.facebook.com/faraz.alam.14203544"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFacebook className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125 " />
+                <FaFacebook className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125" />
               </Link>
               <Link
                 href="https://www.instagram.com/farazalam857/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaInstagram className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125 " />
+                <FaInstagram className="text-yellow-400 text-3xl hover:text-yellow-600 transition duration-700 hover:scale-125" />
               </Link>
             </div>
-            {/* <p className="mb-4">
-              <span className="font-bold">Website:</span> www.abc.xyz.com
-            </p> */}
           </div>
           <form
             onSubmit={handleSubmit}
@@ -215,6 +232,21 @@ const Contact = () => {
                 <p className="text-red-500 text-xs mt-2">{errors.email}</p>
               )}
             </div>
+            <div className="mb-4">
+              <input
+                type="subject"
+                name="subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleInputChange}
+                className={`w-full p-3 transition duration-700 hover:scale-90 bg-gray-900 text-white rounded-md border ${
+                  errors.subject ? 'border-red-500' : 'border-gray-700'
+                } focus:outline-none focus:border-yellow-500`}
+              />
+              {errors.subject && (
+                <p className="text-red-500 text-xs mt-2">{errors.subject}</p>
+              )}
+            </div>
             <div className="mb-6">
               <textarea
                 name="message"
@@ -238,6 +270,11 @@ const Contact = () => {
                 Contact Us
               </button>
             </div>
+            {status && (
+              <p className={`text-center mt-4 ${status.includes('Error') ? 'text-red-500' : 'text-green-500'}`}>
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </div>
