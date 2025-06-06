@@ -37,7 +37,7 @@ const MyComponent = () => {
     return () => clearInterval(interval);
   }, [text, typingSpeed]);
   return (
-    <div className="bg-gray-950">
+    <div className="bg-gray-950 overflow-hidden">
       <div className="min-h-screen bg-[#030712] text-white flex items-center justify-center py-0 px-4">
         <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-center my-[10px] mx-[40px]">
           {/* Left Side - Text Content */}

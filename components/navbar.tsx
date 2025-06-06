@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import CVPortfolio from './cv';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -85,6 +86,9 @@ const Navbar = () => {
           >
             Contact
           </Link>
+        </li>
+        <li>
+          <CVPortfolio/>
         </li>
       </ul>
     </nav>
