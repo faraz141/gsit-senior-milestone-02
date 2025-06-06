@@ -1,7 +1,7 @@
-'use client';
-import Link from 'next/link';
-import { useState } from 'react';
-import CVPortfolio from './cv';
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import CVPortfolio from "./cv";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +31,8 @@ const Navbar = () => {
       <ul
         className={`flex gap-4 transition-transform duration-300 md:flex-row items-center md:static ${
           menuOpen
-            ? 'flex flex-col absolute top-full left-0 w-full bg-gray-900'
-            : 'hidden md:flex'
+            ? "flex flex-col absolute top-full left-0 w-full bg-gray-900"
+            : "hidden md:flex"
         }`}
       >
         <li className="list-none">
@@ -76,6 +76,19 @@ const Navbar = () => {
         </li>
         <li className="list-none">
           <Link
+            href="/services"
+            onClick={() => {
+              if (menuOpen) {
+                toggleMenu();
+              }
+            }}
+            className="block text-white no-underline p-4 rounded-md hover:bg-yellow-500 hover:text-black font-medium transition-all duration-300"
+          >
+            Services
+          </Link>
+        </li>
+        <li className="list-none">
+          <Link
             href="/contact"
             onClick={() => {
               if (menuOpen) {
@@ -88,7 +101,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <CVPortfolio/>
+          <CVPortfolio />
         </li>
       </ul>
     </nav>

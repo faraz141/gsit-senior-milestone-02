@@ -128,7 +128,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-between gap-8 mb-12">
+        <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-8 mb-12">
           <div
             className="text-white pt-32"
             data-aos="fade-right"

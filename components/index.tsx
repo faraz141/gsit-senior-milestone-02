@@ -1,18 +1,19 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 // import { motion } from 'framer-motion';
 
 // import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 // import Link from 'next/link';
-import React from 'react';
-import AboutUs from './about';
-import Contact from './contact';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import SkillsSection from './skills';
+import React from "react";
+import AboutUs from "./about";
+import Contact from "./contact";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import SkillsSection from "./skills";
+import Services from "./service";
 const MyComponent = () => {
-  const [displayText, setDisplayText] = useState(''); // To display text progressively
+  const [displayText, setDisplayText] = useState(""); // To display text progressively
   const text = `I’m a JavaScript developer specializing in React.js and Next.js, focused on crafting exceptional web applications that are user-centric, accessible, and responsive. With over a year of experience in developing dynamic applications using TypeScript, I am passionate about creating intuitive interfaces and optimizing user experiences. My goal is to build solutions that not only meet user needs but also enhance overall usability and performance.`; // Paragraph text
   const typingSpeed = 40; // Speed of typing in milliseconds
 
@@ -109,6 +110,8 @@ const MyComponent = () => {
       <AboutUs />
       <br />
       <SkillsSection />
+      <br />
+      <Services />
       <br />
       <Contact />
     </div>
