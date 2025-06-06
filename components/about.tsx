@@ -11,11 +11,10 @@ const AboutUs = () => {
     AOS.init({
       duration: 1000,
       offset: 200,
-      once: true, // Trigger animations only once
-      mirror: true, // Mirror animation when scrolling back up
+      once: true,
+      mirror: true,
     });
 
-    // Reinitialize AOS if dynamic content changes
     AOS.refresh();
   }, []);
 
@@ -77,14 +76,14 @@ const AboutUs = () => {
           data-aos-mirror="true"
           data-aos-once="false"
           data-aos-anchor-placement="top"
-          className="mx-20 "
+          className="mx-20"
         >
           <Image
             src={'/images/faraz-fiverr.png'}
             alt="About Us"
             width={280}
             height={320}
-            className="rounded-custom-1 transition duration-700 flex  hover:scale-90"
+            className="rounded-custom-1 transition duration-700 flex hover:scale-90"
           />
         </div>
         <div
@@ -118,10 +117,19 @@ const AboutUs = () => {
           </p>
           <p className="m-2">
             Finally, some quick bits about me:
-            <ul className="list-disc ml-5">
-              <li>Tech Geek</li>
-              <li>Freelancer</li>
-              <li>UI/UX Designer</li>
+            <ul className="ml-5 space-y-1">
+              <li className="flex items-start gap-2">
+                <span>💡</span>
+                <span>Tech Geek</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>💼</span>
+                <span>Freelancer</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>🎨</span>
+                <span>UI/UX Designer</span>
+              </li>
             </ul>
           </p>
           <button
@@ -142,3 +150,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+ 
