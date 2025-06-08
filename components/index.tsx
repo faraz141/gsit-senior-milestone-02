@@ -12,6 +12,7 @@ import Contact from "./contact";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import SkillsSection from "./skills";
 import Services from "./service";
+import Work from "./work ";
 const MyComponent = () => {
   const [displayText, setDisplayText] = useState(""); // To display text progressively
   const text = `I’m a JavaScript developer specializing in React.js and Next.js, focused on crafting exceptional web applications that are user-centric, accessible, and responsive. With over a year of experience in developing dynamic applications using TypeScript, I am passionate about creating intuitive interfaces and optimizing user experiences. My goal is to build solutions that not only meet user needs but also enhance overall usability and performance.`; // Paragraph text
@@ -112,6 +113,8 @@ const MyComponent = () => {
       <SkillsSection />
       <br />
       <Services />
+      <br />
+      <Work />
       <br />
       <Contact />
     </div>
