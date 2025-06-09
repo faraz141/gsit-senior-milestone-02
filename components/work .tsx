@@ -50,77 +50,41 @@ const cards = [
     heading: "Resturant Dashboard (React JS)",
   },
   {
-    image: "/images/about.jpg",
-    site: "https://piaic-ultra.vercel.app/",
-    github: "https://github.com/OkashaTanoli/piaic-website",
-    heading: "PIAIC Site (Next JS)",
+    image: "/images/resume.jpg",
+    site: "https://resumefm.vercel.app/",
+    github:
+      "https://github.com/faraz141/gsit-dynamic-resume-sharable-link-download",
+    heading: "Dynamic resume builder (Typescript) ",
   },
   {
-    image: "/images/about.jpg",
-    site: "https://expense-tracker-app-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/Expense-Tracker-App",
+    image: "/images/expense.jpg",
+    site: "https://faraz-expensetraker.vercel.app/",
+    github: "https://github.com/faraz141/expense-tracker",
     heading: "Expense Tracker App",
   },
   {
-    image: "/images/about.jpg",
-    site: "https://covid19-tracker-app-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/covid-tracker",
-    heading: "Covid Tracker App",
+    image: "/images/real-estate.jpg",
+    site: "https://mid-term-real-estate-website.vercel.app/",
+    github: "https://github.com/faraz141/bq-wd-2-mid-term-project",
+    heading: "Real Estate Site (React)",
   },
   {
-    image: "/images/about.jpg",
-    site: "https://shoe-store-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/shoe-store",
-    heading: "Shoe Store",
+    image: "/images/github.jpg",
+    site: "https://faraz-bq-project-02.vercel.app/",
+    github: "https://github.com/faraz141/bq-project-02",
+    heading: "Github Finder App (React)",
   },
   {
-    image: "/images/about.jpg",
-    site: "https://shortanimation-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/Short-Animation",
-    heading: "Tiny Animation",
+    image: "/images/timer.jpg",
+    site: "https://faraz-gsit-countdown-app.vercel.app/",
+    github: "https://github.com/faraz141/gsit-countdown-app",
+    heading: "Countdown Timer App",
   },
   {
-    image: "/images/about.jpg",
-    site: "http://redqueenapp-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/Short-Animation",
-    heading: "Red Queen Animation",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "https://react-309aa.web.app",
-    github: "https://github.com/OkashaTanoli/olx-replica",
-    heading: "Olx Replica",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "https://timer-tdd-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/timer-app-tyscript-tdd",
-    heading: "Timer App",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "https://quiz-app-tyscript-pwa-okasha.surge.sh",
-    github: "https://github.com/OkashaTanoli/quiz-app-typescript-pwa",
-    heading: "Quiz App",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "https://shopping-cart-using-redux-toolkit.surge.sh/",
-    github:
-      "https://github.com/OkashaTanoli/shopping-basket-using-redux-toolkit",
-    heading: "Shopping Cart",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "https://easyaccomodations.com/",
-    github: "https://github.com/OkashaTanoli/hostel_site",
-    heading: "Hostel Site",
-  },
-  {
-    image: "/images/about.jpg",
-    site: "http://spacex-graphgql-okasha.surge.sh/",
-    github: "https://github.com/OkashaTanoli/spacex-graphql",
-    heading: "Space X",
+    image: "/images/joke.jpg",
+    site: "https://faraz-gsit-random-joke-app.vercel.app/",
+    github: "https://github.com/faraz141/gsit-random-joke-app",
+    heading: "Random Joke App",
   },
 ];
 
@@ -130,69 +94,91 @@ const Work = () => {
   }, []);
 
   return (
-    <div
-      className="w-full py-12 bg-cover bg-no-repeat bg-white"
-      style={{ backgroundImage: 'url("/images/bg1.png")' }}
-      id="work"
-    >
-      <div className="max-w-6xl mx-auto mt-24">
-        <div className="text-center mb-10">
-          <h1
-            className="text-4xl font-bold text-yellow-600"
-            data-aos="zoom-in"
-            data-aos-duration="1000"
-          >
-            Work
-          </h1>
-          <div className="flex justify-center items-center gap-1 mt-2">
-            <div
-              className="w-24 h-2 border-l-[100px] border-t-[8px] border-b-[8px] border-transparent border-l-[#140023] -mr-2"
-              data-aos="fade-right"
-            />
-            <div
-              className="w-5 h-5 rounded-full bg-[#140023]"
-              data-aos="fade-down"
-            />
-            <div
-              className="w-24 h-2 border-r-[100px] border-t-[8px] border-b-[8px] border-transparent border-r-[#140023] -ml-2"
-              data-aos="fade-left"
-            />
-          </div>
+    <div className="p-8 text-center bg-gray-950 text-white">
+      <div className="mx-auto mb-20 w-[220px]">
+        <h1
+          className="text-[40px] font-bold text-center my-[20px] leading-[0] font-[custom3] text-[#eee]"
+          data-aos="zoom-in"
+          data-aos-offset="200"
+          data-aos-delay="0"
+          data-aos-duration="1000"
+          data-aos-mirror="true"
+          data-aos-once="false"
+          data-aos-anchor-placement="top"
+        >
+          Works
+        </h1>
+        <div className="flex justify-center items-center w-[220px] mx-auto">
+          <div
+            className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[100px] border-l-[#CA8A04] border-b-[8px] border-b-transparent -mr-[10px]"
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="800"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
+          <div
+            className="w-[20px] h-[20px] rounded-full bg-[#CA8A04]"
+            data-aos="fade-down"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="500"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
+          <div
+            className="w-0 h-0 border-t-[8px] border-t-transparent border-r-[100px] border-r-[#CA8A04] border-b-[8px] border-b-transparent -ml-[10px]"
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="800"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          ></div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 px-4">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="relative rounded-xl shadow-2xl overflow-hidden aspect-[16/8] transition-all duration-500"
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-              data-aos-duration="1000"
-            >
-              <Image
-                src={card.image}
-                alt={card.heading}
-                className="object-cover w-full h-full"
-                fill
-              />
-              <div className="absolute inset-0 bg-black opacity-10 hover:opacity-0 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 text-white bg-black/50 px-4 py-2 rounded-md text-lg font-semibold">
-                {card.heading}
-              </div>
-              <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-                <a href={card.site} target="_blank" rel="noreferrer">
-                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm">
-                    Visit Site <FaGlobe />
-                  </button>
-                </a>
-                <a href={card.github} target="_blank" rel="noreferrer">
-                  <button className="bg-gray-800 hover:bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm">
-                    View on GitHub <VscGithub />
-                  </button>
-                </a>
-              </div>
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 px-4">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="relative rounded-xl shadow-2xl overflow-hidden aspect-[16/8] transition-all duration-500"
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            data-aos-offset="200"
+            data-aos-delay="0"
+            data-aos-duration="1000"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top"
+          >
+            <Image
+              src={card.image}
+              alt={card.heading}
+              className="object-cover w-full h-full"
+              fill
+            />
+            <div className="absolute inset-0 bg-black opacity-10 hover:opacity-0 transition-opacity duration-300" />
+            <div className="absolute bottom-4 left-4 text-white bg-black/50 px-4 py-2 rounded-md text-lg font-semibold">
+              {card.heading}
             </div>
-          ))}
-        </div>
+            <div className="absolute bottom-4 right-4 flex flex-col gap-2">
+              <a href={card.site} target="_blank" rel="noreferrer">
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm">
+                  Visit Site <FaGlobe />
+                </button>
+              </a>
+              <a href={card.github} target="_blank" rel="noreferrer">
+                <button className="bg-gray-800 hover:bg-black text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm">
+                  View on GitHub <VscGithub />
+                </button>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
