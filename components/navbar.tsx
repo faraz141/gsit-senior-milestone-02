@@ -76,19 +76,6 @@ const Navbar = () => {
         </li>
         <li className="list-none">
           <Link
-            href="/services"
-            onClick={() => {
-              if (menuOpen) {
-                toggleMenu();
-              }
-            }}
-            className="block text-white no-underline p-4 rounded-md hover:bg-yellow-500 hover:text-black font-medium transition-all duration-300"
-          >
-            Services
-          </Link>
-        </li>
-        <li className="list-none">
-          <Link
             href="/work"
             onClick={() => {
               if (menuOpen) {
@@ -100,6 +87,20 @@ const Navbar = () => {
             Work
           </Link>
         </li>
+        <li className="list-none">
+          <Link
+            href="/services"
+            onClick={() => {
+              if (menuOpen) {
+                toggleMenu();
+              }
+            }}
+            className="block text-white no-underline p-4 rounded-md hover:bg-yellow-500 hover:text-black font-medium transition-all duration-300"
+          >
+            Services
+          </Link>
+        </li>
+
         <li className="list-none">
           <Link
             href="/contact"
