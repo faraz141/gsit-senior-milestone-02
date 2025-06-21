@@ -1,4 +1,4 @@
-# 🧑‍💻 Developer Portfolio - Faraz Alam
+# 🧑‍💻 Developer Portfolio 
 
 This is my personal developer portfolio built using **Next.js**, **Tailwind CSS**, and **SendGrid** for contact form integration. It showcases my skills, projects, and experience as a frontend developer.
 
